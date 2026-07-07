@@ -1,0 +1,267 @@
+/* ------------------------------------------------------------------
+   Muhammad Fateh Mehmood — portfolio
+   Minimal, content-first, light/dark aware.
+------------------------------------------------------------------ */
+
+:root {
+  --bg: #fdfdfb;
+  --text: #1c1c1a;
+  --muted: #6b6b64;
+  --accent: #9a6b1f;
+  --line: #e6e4dd;
+  --card: #f6f5f0;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #16161a;
+    --text: #e8e6e1;
+    --muted: #9d9b93;
+    --accent: #cfb991;
+    --line: #2c2c32;
+    --card: #1e1e24;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ---------- header / nav ---------- */
+
+header {
+  padding: 2rem 0 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+header .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.site-name {
+  font-weight: 650;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  color: var(--text);
+}
+
+nav {
+  display: flex;
+  gap: 1.4rem;
+}
+
+nav a {
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: var(--muted);
+  transition: color 0.15s ease;
+}
+
+nav a:hover {
+  color: var(--text);
+}
+
+nav a[aria-current="page"] {
+  color: var(--accent);
+  font-weight: 550;
+}
+
+/* ---------- main ---------- */
+
+main {
+  padding: 3rem 0 4rem;
+}
+
+h1 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 1.15rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  margin: 2.75rem 0 1.1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--line);
+}
+
+main > .wrap > h2:first-child,
+h1 + h2 {
+  margin-top: 0;
+}
+
+p + p {
+  margin-top: 0.9rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+main a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+li + li {
+  margin-top: 0.35rem;
+}
+
+/* ---------- entries (experience / projects / education) ---------- */
+
+.entry {
+  margin-bottom: 2rem;
+}
+
+.entry:last-child {
+  margin-bottom: 0;
+}
+
+.entry-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+}
+
+.entry-head h3 {
+  font-size: 1.02rem;
+  font-weight: 650;
+}
+
+.entry-date {
+  font-size: 0.88rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.entry-role {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 0.45rem;
+}
+
+.entry ul {
+  font-size: 0.97rem;
+  margin-top: 0.35rem;
+}
+
+.entry-note {
+  font-size: 0.97rem;
+  margin-top: 0.35rem;
+}
+
+/* ---------- tags / pills ---------- */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  list-style: none;
+  padding: 0;
+}
+
+.tags li {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.18rem 0.7rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ---------- home hero ---------- */
+
+.hero {
+  margin-bottom: 1rem;
+}
+
+.hero .lede {
+  font-size: 1.1rem;
+  max-width: 40rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+}
+
+/* ---------- footer ---------- */
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 1.75rem 0 2.5rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+footer a {
+  color: var(--muted);
+}
+
+footer a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+  nav {
+    gap: 1rem;
+  }
+}
