@@ -345,6 +345,107 @@ li + li {
   color: var(--accent);
 }
 
+/* ---------- contact page ---------- */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+  gap: 1.1rem;
+}
+
+.contact-box {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  padding: 1.4rem 1.2rem;
+  text-align: center;
+  color: var(--text);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.contact-box:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  text-decoration: none !important;
+}
+
+.contact-box-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.4rem;
+  color: var(--accent);
+}
+
+.contact-box-label {
+  font-weight: 650;
+  font-size: 0.95rem;
+}
+
+.contact-box-value {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+  overflow-wrap: anywhere;
+}
+
+.contact-form {
+  max-width: 44rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 0.9rem;
+}
+
+.form-row input {
+  flex: 1;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem 0.9rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  background: var(--accent);
+  color: var(--bg);
+  padding: 0.85rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 650;
+  font-size: 0.98rem;
+  font-family: inherit;
+}
+
+.contact-form button:hover {
+  opacity: 0.88;
+}
+
+@media (max-width: 480px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
+
 /* ---------- article list (writing) ---------- */
 
 .article-list {
