@@ -11,6 +11,8 @@
   --line: #e8e6e0;
   --card: #faf9f6;
   --thumb: linear-gradient(135deg, #f3efe6, #e9e2d2);
+  --heading: #1e56b0;
+  --subheading: #c95f0b;
   color-scheme: light;
 }
 
@@ -22,6 +24,8 @@
   --line: #2c2c32;
   --card: #1e1e24;
   --thumb: linear-gradient(135deg, #24242c, #2d2b26);
+  --heading: #82aaff;
+  --subheading: #f2a35c;
   color-scheme: dark;
 }
 
@@ -34,6 +38,8 @@
     --line: #2c2c32;
     --card: #1e1e24;
     --thumb: linear-gradient(135deg, #24242c, #2d2b26);
+    --heading: #82aaff;
+    --subheading: #f2a35c;
     color-scheme: dark;
   }
 }
@@ -156,6 +162,7 @@ h1 {
   letter-spacing: -0.02em;
   line-height: 1.25;
   margin-bottom: 0.35rem;
+  color: var(--heading);
 }
 
 .subtitle {
@@ -171,6 +178,7 @@ h2 {
   margin: 2.25rem 0 1rem;
   padding-bottom: 0.35rem;
   border-bottom: 1px solid var(--line);
+  color: var(--subheading);
 }
 
 p + p {
