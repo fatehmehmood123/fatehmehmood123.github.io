@@ -1,26 +1,40 @@
 /* ------------------------------------------------------------------
    Muhammad Fateh Mehmood — portfolio
-   Minimal, content-first, light/dark aware.
+   Minimal, card-based, light/dark with manual toggle.
 ------------------------------------------------------------------ */
 
 :root {
-  --bg: #fdfdfb;
+  --bg: #ffffff;
   --text: #1c1c1a;
   --muted: #6b6b64;
   --accent: #9a6b1f;
-  --line: #e6e4dd;
-  --card: #f6f5f0;
-  color-scheme: light dark;
+  --line: #e8e6e0;
+  --card: #faf9f6;
+  --thumb: linear-gradient(135deg, #f3efe6, #e9e2d2);
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg: #16161a;
+  --text: #e8e6e1;
+  --muted: #9d9b93;
+  --accent: #cfb991;
+  --line: #2c2c32;
+  --card: #1e1e24;
+  --thumb: linear-gradient(135deg, #24242c, #2d2b26);
+  color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: #16161a;
     --text: #e8e6e1;
     --muted: #9d9b93;
     --accent: #cfb991;
     --line: #2c2c32;
     --card: #1e1e24;
+    --thumb: linear-gradient(135deg, #24242c, #2d2b26);
+    color-scheme: dark;
   }
 }
 
@@ -37,32 +51,36 @@ html {
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
-  font-size: 1.0625rem;
-  line-height: 1.65;
+  font-size: 1rem;
+  line-height: 1.6;
   background: var(--bg);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
 }
 
 .wrap {
-  max-width: 44rem;
+  max-width: 62rem;
   margin: 0 auto;
-  padding: 0 1.25rem;
+  padding: 0 1.5rem;
 }
 
 /* ---------- header / nav ---------- */
 
 header {
-  padding: 2rem 0 1.5rem;
+  padding: 1.1rem 0;
   border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 10;
 }
 
 header .wrap {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
-  gap: 0.75rem;
+  gap: 0.6rem;
 }
 
 .site-name {
@@ -73,9 +91,16 @@ header .wrap {
   color: var(--text);
 }
 
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+}
+
 nav {
   display: flex;
-  gap: 1.4rem;
+  flex-wrap: wrap;
+  gap: 1.3rem;
 }
 
 nav a {
@@ -94,10 +119,35 @@ nav a[aria-current="page"] {
   font-weight: 550;
 }
 
+.theme-toggle {
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--text);
+  border-radius: 999px;
+  width: 2rem;
+  height: 2rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+}
+
+:root[data-theme="dark"] .toggle-moon,
+.toggle-sun {
+  display: none;
+}
+
+:root[data-theme="dark"] .toggle-sun {
+  display: inline;
+}
+
 /* ---------- main ---------- */
 
 main {
-  padding: 3rem 0 4rem;
+  padding: 2.25rem 0 3rem;
 }
 
 h1 {
@@ -105,31 +155,26 @@ h1 {
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.25;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
 }
 
 .subtitle {
   color: var(--muted);
-  font-size: 1.05rem;
-  margin-bottom: 2rem;
+  font-size: 1.02rem;
+  margin-bottom: 1.75rem;
 }
 
 h2 {
-  font-size: 1.15rem;
+  font-size: 1.12rem;
   font-weight: 650;
   letter-spacing: -0.01em;
-  margin: 2.75rem 0 1.1rem;
-  padding-bottom: 0.4rem;
+  margin: 2.25rem 0 1rem;
+  padding-bottom: 0.35rem;
   border-bottom: 1px solid var(--line);
 }
 
-main > .wrap > h2:first-child,
-h1 + h2 {
-  margin-top: 0;
-}
-
 p + p {
-  margin-top: 0.9rem;
+  margin-top: 0.8rem;
 }
 
 a {
@@ -146,13 +191,28 @@ ul {
 }
 
 li + li {
-  margin-top: 0.35rem;
+  margin-top: 0.3rem;
 }
 
-/* ---------- entries (experience / projects / education) ---------- */
+/* ---------- hero ---------- */
+
+.hero .lede {
+  font-size: 1.08rem;
+  max-width: 46rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-top: 1.25rem;
+  font-size: 0.95rem;
+}
+
+/* ---------- entries (experience / education) ---------- */
 
 .entry {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .entry:last-child {
@@ -168,30 +228,24 @@ li + li {
 }
 
 .entry-head h3 {
-  font-size: 1.02rem;
+  font-size: 1rem;
   font-weight: 650;
 }
 
 .entry-date {
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   color: var(--muted);
   white-space: nowrap;
 }
 
 .entry-role {
   color: var(--muted);
-  font-size: 0.95rem;
-  margin-bottom: 0.45rem;
-}
-
-.entry ul {
-  font-size: 0.97rem;
-  margin-top: 0.35rem;
+  font-size: 0.92rem;
 }
 
 .entry-note {
-  font-size: 0.97rem;
-  margin-top: 0.35rem;
+  font-size: 0.95rem;
+  margin-top: 0.3rem;
 }
 
 /* ---------- tags / pills ---------- */
@@ -208,36 +262,122 @@ li + li {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 999px;
-  padding: 0.18rem 0.7rem;
+  padding: 0.16rem 0.7rem;
   font-size: 0.85rem;
   color: var(--muted);
   margin: 0;
 }
 
-/* ---------- home hero ---------- */
+/* ---------- card grid ---------- */
 
-.hero {
-  margin-bottom: 1rem;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15.5rem, 1fr));
+  gap: 1.1rem;
 }
 
-.hero .lede {
-  font-size: 1.1rem;
-  max-width: 40rem;
-}
-
-.contact-links {
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  overflow: hidden;
   display: flex;
-  flex-wrap: wrap;
-  gap: 1.2rem;
-  margin-top: 1.5rem;
-  font-size: 0.95rem;
+  flex-direction: column;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.card .thumb {
+  background: var(--thumb);
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+}
+
+.card .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-body {
+  padding: 0.85rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.card-body h3 {
+  font-size: 0.98rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.card-body h3 a {
+  color: var(--text);
+}
+
+.card-body h3 a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.card-body p {
+  font-size: 0.88rem;
+  color: var(--muted);
+  flex: 1;
+}
+
+.card-meta {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.card-meta .star {
+  color: var(--accent);
+}
+
+/* ---------- article list (writing) ---------- */
+
+.article-list {
+  list-style: none;
+  padding: 0;
+}
+
+.article-list li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--line);
+  margin: 0;
+}
+
+.article-list a {
+  font-weight: 550;
+  color: var(--text);
+}
+
+.article-list a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.article-list .card-meta {
+  display: block;
+  margin-top: 0.1rem;
 }
 
 /* ---------- footer ---------- */
 
 footer {
   border-top: 1px solid var(--line);
-  padding: 1.75rem 0 2.5rem;
+  padding: 1.5rem 0 2rem;
   font-size: 0.9rem;
   color: var(--muted);
 }
@@ -259,9 +399,9 @@ footer a:hover {
 
 @media (max-width: 480px) {
   h1 {
-    font-size: 1.6rem;
+    font-size: 1.55rem;
   }
   nav {
-    gap: 1rem;
+    gap: 0.9rem;
   }
 }

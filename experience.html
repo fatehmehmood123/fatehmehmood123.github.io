@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Experience — Muhammad Fateh Mehmood</title>
-  <meta name="description" content="Research and industry experience of Muhammad Fateh Mehmood — Purdue University, Queen's University, Sabanci University, AIMS Lab, and more." />
+  <meta name="description" content="Research and industry experience of Muhammad Fateh Mehmood — Purdue, Queen's University, Sabanci University, and more." />
+  <script src="/js/theme.js"></script>
   <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
@@ -12,12 +13,18 @@
   <header>
     <div class="wrap">
       <a class="site-name" href="/">Fateh Mehmood</a>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/experience" aria-current="page">Experience</a>
-        <a href="/projects">Projects</a>
-        <a href="/education">Education</a>
-      </nav>
+      <div class="header-right">
+        <nav>
+          <a href="/">Home</a>
+          <a href="/experience" aria-current="page">Experience</a>
+          <a href="/projects">Projects</a>
+          <a href="/writing">Writing</a>
+          <a href="/education">Education</a>
+        </nav>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark theme">
+          <span class="toggle-sun">&#9728;&#65039;</span><span class="toggle-moon">&#127769;</span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -25,19 +32,17 @@
     <div class="wrap">
 
       <h1>Experience</h1>
-      <p class="subtitle">Research positions and industry internships</p>
+      <p class="subtitle">Research, industry, and leadership</p>
 
       <h2>Research</h2>
 
       <article class="entry">
         <div class="entry-head">
-          <h3>Purdue University</h3>
+          <h3>Purdue University — Boiling and Two-Phase Flow Laboratory</h3>
           <span class="entry-date">Aug 2025 – Present</span>
         </div>
-        <p class="entry-role">Graduate Research Assistant · Boiling and Two-Phase Flow Laboratory (BTPFL) · West Lafayette, IN</p>
-        <ul>
-          <li>Researching cryogenic boiling under different gravity conditions and two-phase flow and heat transfer, advised by Professor Issam Mudawar.</li>
-        </ul>
+        <p class="entry-role">Graduate Research Assistant · West Lafayette, IN</p>
+        <p class="entry-note">Cryogenic boiling under different gravity conditions; two-phase flow and heat transfer. Advisor: Prof. Issam Mudawar.</p>
       </article>
 
       <article class="entry">
@@ -45,21 +50,17 @@
           <h3>Queen&rsquo;s University</h3>
           <span class="entry-date">Jun 2025 – Aug 2025</span>
         </div>
-        <p class="entry-role">Research Intern · MITACS Globalink Research Internship · Kingston, ON, Canada</p>
-        <ul>
-          <li>CFD-aided design of a wind tunnel, supervised by Barbara Da Silva.</li>
-        </ul>
+        <p class="entry-role">Research Intern (MITACS Globalink) · Kingston, Canada</p>
+        <p class="entry-note">CFD-aided design of a wind tunnel.</p>
       </article>
 
       <article class="entry">
         <div class="entry-head">
-          <h3>Artificial Intelligence in Mechanical Systems (AIMS) Lab</h3>
+          <h3>AIMS Lab, NUST</h3>
           <span class="entry-date">Sep 2024 – May 2025</span>
         </div>
-        <p class="entry-role">Research Assistant · NUST · Islamabad, Pakistan</p>
-        <ul>
-          <li>Designed and ran CFD analyses of deflectors and bluff bodies upstream of vertical-axis wind turbines (VAWT), increasing power output by up to 25% using COMSOL fluid–structure interaction (FSI).</li>
-        </ul>
+        <p class="entry-role">Research Assistant · Islamabad, Pakistan</p>
+        <p class="entry-note">CFD of deflectors and bluff bodies upstream of vertical-axis wind turbines — up to 25% more power output (COMSOL FSI).</p>
       </article>
 
       <article class="entry">
@@ -68,12 +69,7 @@
           <span class="entry-date">Jul 2024 – Sep 2024</span>
         </div>
         <p class="entry-role">Research Intern · Istanbul, T&uuml;rkiye</p>
-        <ul>
-          <li>Automated grit characterization (area, widths, height, rake, oblique, and clearance angles) in MATLAB and Python from NanoFocus 3D scans.</li>
-          <li>Laser-ablated 3- and 4-channel textures at 45&deg; on hardened steel substrates.</li>
-          <li>Brazed CBN grits with titanium–bronze filler metal using vacuum brazing and laser heating.</li>
-          <li>Tested brazed grinding wheels at 27k RPM on Steel 2379, measuring surface roughness, temperature, and grinding forces — grinding temperature reduced by 30%; results presented as a poster.</li>
-        </ul>
+        <p class="entry-note">Automated grit characterization (MATLAB/Python, 3D scans); laser texturing and vacuum brazing of CBN grinding wheels — grinding temperature reduced by 30%.</p>
       </article>
 
       <h2>Industry</h2>
@@ -84,10 +80,7 @@
           <span class="entry-date">Jun 2024 – Jul 2024</span>
         </div>
         <p class="entry-role">Plant Maintenance Intern · Mirpur Mathelo, Pakistan</p>
-        <ul>
-          <li>Analyzed valves, heat exchangers, pipes and fittings, and pumps, consulting the relevant API standards.</li>
-          <li>Observed safety standards and protocols for personal safety and equipment reliability.</li>
-        </ul>
+        <p class="entry-note">Valves, heat exchangers, piping, and pumps against API standards; plant safety protocols.</p>
       </article>
 
       <article class="entry">
@@ -96,10 +89,7 @@
           <span class="entry-date">Jul 2023 – Aug 2023</span>
         </div>
         <p class="entry-role">Production Intern · Hasan Abdal, Pakistan</p>
-        <ul>
-          <li>Worked on production of centrifugal pumps; hands-on with CNC milling, lathe machines, and industrial sand casting.</li>
-          <li>Reverse-engineered outsourced pumps and tested flow rate, cavitation, NPSH, and efficiency.</li>
-        </ul>
+        <p class="entry-note">Centrifugal pump production, CNC machining, sand casting; reverse engineering and flow testing (cavitation, NPSH, efficiency).</p>
       </article>
 
       <article class="entry">
@@ -108,24 +98,18 @@
           <span class="entry-date">Nov 2022 – Oct 2023</span>
         </div>
         <p class="entry-role">MERN Stack Developer</p>
-        <ul>
-          <li>Built e-commerce platforms, cloud-based note-taking apps, mess menu managers, and portfolio websites with MongoDB, Express.js, React.js, and Node.js.</li>
-        </ul>
+        <p class="entry-note">E-commerce platforms, cloud note apps, mess menu managers, and portfolio sites.</p>
       </article>
 
       <h2>Leadership &amp; Community</h2>
 
       <article class="entry">
         <div class="entry-head">
-          <h3>SPARK (Spark NUST)</h3>
+          <h3>SPARK</h3>
           <span class="entry-date">Sep 2024 – Jun 2025</span>
         </div>
-        <p class="entry-role">Co-Founder, then Vice President · Islamabad, Pakistan</p>
-        <ul>
-          <li>Co-founded an organization for the psychological and skill development of orphans — teaching SolidWorks, Microsoft Office, and providing career counseling.</li>
-          <li>Visited 7 orphanages, impacting more than 450 children; raised 300,000 PKR.</li>
-          <li>Collaborated with the Islamabad SolidWorks User Group (ISUG) to teach children SolidWorks basics.</li>
-        </ul>
+        <p class="entry-role">Co-Founder &amp; Vice President · Islamabad, Pakistan</p>
+        <p class="entry-note">Skill development for orphans — 7 orphanages, 450+ children, 300,000 PKR raised; SolidWorks basics taught with ISUG.</p>
       </article>
 
       <article class="entry">
@@ -133,10 +117,8 @@
           <h3>Millennium Campus Network</h3>
           <span class="entry-date">Aug 2024 – Dec 2024</span>
         </div>
-        <p class="entry-role">Millennium Fellow · Sponsored by United Nations Academic Impact</p>
-        <ul>
-          <li>Selected among 44,000+ applicants globally.</li>
-        </ul>
+        <p class="entry-role">Millennium Fellow · UN Academic Impact</p>
+        <p class="entry-note">Selected among 44,000+ applicants globally.</p>
       </article>
 
       <article class="entry">
@@ -144,7 +126,7 @@
           <h3>ASHRAE NUST-SMME Student Branch</h3>
           <span class="entry-date">Sep 2022 – Jun 2024</span>
         </div>
-        <p class="entry-role">Director Technical Team · previously Director Finance, Executive Admin Events</p>
+        <p class="entry-role">Director Technical Team · earlier Director Finance, Executive Admin Events</p>
       </article>
 
       <article class="entry">
@@ -152,7 +134,7 @@
           <h3>NUST Book Club</h3>
           <span class="entry-date">Sep 2022 – Jun 2024</span>
         </div>
-        <p class="entry-role">Deputy Director Admin Events · previously Executive Admin Events</p>
+        <p class="entry-role">Deputy Director Admin Events</p>
       </article>
 
     </div>
@@ -162,7 +144,7 @@
     <div class="wrap">
       <span>&copy; 2026 Muhammad Fateh Mehmood</span>
       <span>
-        <a href="mailto:fatehmehmood123@gmail.com">fatehmehmood123@gmail.com</a>
+        <a href="mailto:fateh@purdue.edu">fateh@purdue.edu</a>
       </span>
     </div>
   </footer>
